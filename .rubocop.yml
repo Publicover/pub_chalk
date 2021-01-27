@@ -5,9 +5,8 @@ AllCops:
   Exclude:
     - node_modules/**/*
     - app/models/concerns/active_storage_helpers.rb
-    - config/environments/development.rb
-    - config/initializers/devise.rb
-    - config/application.rb
+    - config/**/*
+    - config/*
     - db/migrations/**/*
     - db/migrate/**/*
     - db/schema.rb
@@ -17,6 +16,8 @@ AllCops:
     - vendor/bundle/**/*
     - test/**/**
     - app/controllers/graphql_controller.rb
+    - Gemfile
+    - Rakefile
 
 Layout:
   Metrics/LineLength:
@@ -91,7 +92,7 @@ Metrics/MethodLength:
   Max: 15
   Exclude:
     - db/migrate/*
-  ExcludedMethods:
+  IgnoredMethods:
     - base_attributes
     - full_includes
     - raw_sql

@@ -9,7 +9,7 @@ class DashboardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should log in' do
-    login_as users(:jim)
+    login_as users(:admin)
     get root_path
     assert_response :success
   end

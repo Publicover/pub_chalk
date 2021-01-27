@@ -20,6 +20,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'should know team' do
-    assert users(:jim).team.id == teams(:one).id
+    assert users(:admin).team.id == teams(:one).id
   end
 end

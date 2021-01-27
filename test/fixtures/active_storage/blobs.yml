@@ -1,0 +1,15 @@
+team_one_logo_blob:
+  key: ctp2n6dq4r39wmzi7kf1lr410h69
+  filename: jennifer_connelly.jpg
+  content_type: image/jpg
+  metadata: '{"identified":true,"analyzed":true}'
+  byte_size: <%= File.size('test/fixtures/files/jennifer_connelly.jpg') %>
+  checksum: <%= Digest::MD5.file('test/fixtures/files/jennifer_connelly.jpg').base64digest %>
+
+team_two_logo_blob:
+  key: kf8dpngi7e9sgdgzkqb2wa98yhvh
+  filename: t2_fire_thumbs_up.jpg
+  content_type: image/jpg
+  metadata: '{"identified":true,"analyzed":true}'
+  byte_size: <%= File.size('test/fixtures/files/t2_fire_thumbs_up.jpg') %>
+  checksum: <%= Digest::MD5.file('test/fixtures/files/t2_fire_thumbs_up.jpg').base64digest %>

@@ -1,0 +1,9 @@
+team_one_logo:
+  name: logo
+  record: one (Team)
+  blob: team_one_logo_blob
+
+team_two_log:
+  name: logo
+  record: two (Team)
+  blob: team_two_logo_blob

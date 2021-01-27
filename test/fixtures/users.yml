@@ -4,15 +4,15 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-jim:
+admin:
   email: jim@pubchalk.com
   f_name: Jim
   l_name: Pub
-  role: admin
+  role: <%= :admin %>
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   team: one
 
-two:
+captain:
   email: dana@pubchalk.com
   f_name: Dana
   l_name: Pub
@@ -20,7 +20,7 @@ two:
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   team: one
 
-three:
+player:
   email: mike@pubchalk.com
   f_name: Mike
   l_name: Pub
@@ -28,7 +28,7 @@ three:
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   team: one
 
-four:
+guy:
   email: guy@otherteam.com
   f_name: Some
   l_name: Guy
@@ -36,7 +36,7 @@ four:
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   team: two
 
-five:
+other_guy:
   email: otherguy@otherteam.com
   f_name: Other
   l_name: Guy
