@@ -14,6 +14,10 @@ User.create(email: 'jim@pubchalk.com', f_name: 'Jim', l_name: 'Pub', role: :admi
 puts "Creating 2 teams with users..."
 
 team = Team.create(name: 'Fightin Buckeyes')
+team.logo.attach(io: File.open('test/fixtures/files/thumbs_up_batman.jpeg'),
+                 filename: 'thumbs_up_batman.jpeg',
+                 content_type: 'image/jpg')
+team.save
 
 User.create(email: 'dana@pubchalk.com', f_name: 'Dana', l_name: 'Pub', role: :captain,
             password: 'password', team_id: team.id)
@@ -21,6 +25,10 @@ User.create(email: 'mike@pubchalk.com', f_name: 'Mike', l_name: 'Pub', role: :pl
             password: 'password', team_id: team.id)
 
 other_team = Team.create(name: 'Ohio Players')
+other_team.logo.attach(io: File.open('test/fixtures/files/t2_fire_thumbs_up.jpg'),
+                       filename: 't2_fire_thumbs_up.jpg',
+                       content_type: 'image/jpg')
+other_team.save
 
 User.create(email: 'someguy@team.com', f_name: 'Some', l_name: 'Guy', role: :captain,
             password: 'password', team_id: other_team.id)

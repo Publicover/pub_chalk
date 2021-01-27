@@ -21,9 +21,9 @@ class TeamsController < ApplicationController
 
     if @team.save
       @team.logo.attach(team_params[:logo])
-      redirect_to 'index', notice: 'Team created successfully.'
+      redirect_to teams_path, notice: 'Team created successfully.'
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -31,12 +31,12 @@ class TeamsController < ApplicationController
 
   def update
     @team.update(team_params)
-    redirect_to 'show', notice: 'Team updated successfully.'
+    redirect_to team_path(@team), notice: 'Team updated successfully.'
   end
 
   def destroy
     @team.destroy
-    redirect_to 'index', notice: 'Team destroyed successfully.'
+    redirect_to teams_path, notice: 'Team destroyed successfully.'
   end
 
   private

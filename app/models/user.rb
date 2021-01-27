@@ -17,6 +17,10 @@ class User < ApplicationRecord
     player: 2
   }
 
+  def full_name
+    "#{f_name} #{l_name}"
+  end
+
   private
 
     def team_id_present?
