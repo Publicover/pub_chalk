@@ -43,3 +43,19 @@ other_guy:
   role: captain
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   team: two
+
+dont_user:
+  email: thiswillfail@team3.com
+  f_name: This
+  l_name: Willfail
+  role: captain
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  team: three
+
+dont_either:
+  email: thiswillfailtoo@team3.com
+  f_name: Also
+  l_name: Fail
+  role: player
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  team: three
