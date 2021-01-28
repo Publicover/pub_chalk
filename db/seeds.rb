@@ -34,3 +34,10 @@ User.create(email: 'someguy@team.com', f_name: 'Some', l_name: 'Guy', role: :cap
             password: 'password', team_id: other_team.id)
 User.create(email: 'otherguy@team.com', f_name: 'Other', l_name: 'Guy', role: :player,
             password: 'password', team_id: other_team.id)
+
+puts 'Creating 2 games...'
+
+Game.create!(name: 'Cricket', schedule_date: Time.zone.today, team_ids: [team.id, other_team.id])
+Game.create!(name: '501', schedule_date: Time.zone.tomorrow, team_ids: [team.id, other_team.id])
+
+puts 'Seeds complete!'
