@@ -38,7 +38,6 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def destroy?
-    # binding.pry
     edit?
   end
 

@@ -14,9 +14,8 @@ class GamePolicy < ApplicationPolicy
   end
 
   def show?
-    # binding.pry
     return true if user.admin?
-    return true if record.has_player?(user)
+    return true if record.player?(user)
 
     false
   end
@@ -32,7 +31,7 @@ class GamePolicy < ApplicationPolicy
   def edit?
     return true if user.admin?
     return true if user.captain?
-    return true if record.has_player?(user)
+    return true if record.player?(user)
 
     false
   end
@@ -43,12 +42,12 @@ class GamePolicy < ApplicationPolicy
 
   def destroy?
     return true if user.admin?
-    return true if record.has_player?(user)
+    return true if record.player?(user)
 
     false
   end
 
   def permitted_attributes
-    [:name, :schedule_date, team_ids: []]
+    [:name, :schedule_date, { team_ids: [] }]
   end
 end
