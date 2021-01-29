@@ -2,12 +2,7 @@ require 'test_helper'
 
 class GamesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    games(:one).update(team_ids: [teams(:one).id, teams(:two).id])
-    # games(:one).save
-    games(:two).update(team_ids: [teams(:one).id, teams(:two).id])
-    # games(:two).save
-    games(:three).update(team_ids: [teams(:three).id])
-    # teams(:three).save
+    fill_in_game_team_ids
   end
 
   class Admin < GamesControllerTest

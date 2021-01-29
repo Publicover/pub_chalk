@@ -16,6 +16,11 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    def fill_in_game_team_ids
+      games(:one).update(team_ids: [teams(:one).id, teams(:two).id])
+      games(:two).update(team_ids: [teams(:one).id, teams(:two).id])
+      games(:three).update(team_ids: [teams(:three).id])
+    end
   end
 end
 
